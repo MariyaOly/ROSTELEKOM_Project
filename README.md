@@ -27,7 +27,6 @@ Why I Chosen unittest:
 
 -Compatibility: For projects that need to run on multiple Python versions.
 
-To simplify test case setup and teardown and to promote code reusability, the conftest.py file was employed. This file serves as a central place to define fixtures, which are reusable setup and teardown functions for tests. This approach not only improved the readability of the test cases but also facilitated maintenance and scalability of the testing suite.
 
 What's Done:
 
