@@ -1,6 +1,3 @@
-
-
-#python -m pytest -v --driver Chrome --driver-path tests/chromedriver.exe tests/test_tab.py
 import unittest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -14,7 +11,6 @@ class TabOrderTest(unittest.TestCase):
         self.driver.get("https://b2c.passport.rt.ru/")
 
     def test_tab_order(self):
-        # Wait for the tab buttons to be clickable
         phone_button = WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable((By.XPATH, '//*[@id="phone_auth_tab"]'))
         )
@@ -34,10 +30,11 @@ class TabOrderTest(unittest.TestCase):
         for button in buttons:
             button.send_keys(Keys.TAB)
 
-            # You can add assertions here to verify the tab order
-
     def tearDown(self):
         self.driver.quit()
 
 if __name__ == "__main__":
     unittest.main()
+
+
+#python -m pytest -v --driver Chrome --driver-path tests/chromedriver.exe tests/test_tab.py
