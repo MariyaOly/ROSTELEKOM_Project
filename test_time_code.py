@@ -12,13 +12,11 @@ class LoginWithTempCodeTest(unittest.TestCase):
 
 
     def test_login_with_temp_code(self):
-        # Click the "Login with Temporary Code" button
         temp_code_button = WebDriverWait(self.driver, 15).until(
             EC.presence_of_element_located((By.ID, "back_to_otp_btn"))
         )
         temp_code_button.click()
 
-        # Enter a valid email
         email_input = WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.ID, "address"))
         )
@@ -28,7 +26,6 @@ class LoginWithTempCodeTest(unittest.TestCase):
         get_code_button = self.driver.find_element(By.ID, "otp_get_code")
         get_code_button.click()
 
-        # You can add assertions here to verify the expected behavior after clicking "Get Code"
 
     def tearDown(self):
         self.driver.quit()
